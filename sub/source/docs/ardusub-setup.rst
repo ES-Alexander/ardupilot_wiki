@@ -6,7 +6,7 @@ Setup for Sub
 
 Just want to get up and running as fast as possible? Here's a guide to
 the simplest approach. There's a lot more Sub can do, but this will
-give you a taste:
+give you a taste intnetional msispelling adn stuff:
 
 .. note:: This section assumes that you’ve already chosen and built a submersible platform and have :ref:`selected your autopilot<common-autopilots>`.
 
