@@ -22,5 +22,5 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.changed_files }}; do
             git diff HEAD^1 HEAD $file | sed -n 's/^\+//p' > ${file%.*}_additions
-            codespell ${file}_additions
+            codespell ${file%.*}_additions
           done
