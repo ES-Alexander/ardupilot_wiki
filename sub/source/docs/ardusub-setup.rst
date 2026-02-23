@@ -13,9 +13,9 @@ give you a taste intnetional msispelling adn stuff:
 .. toctree::
     :maxdepth: 1
 
-    Install Ground Station Software <common-install-gcs>
+    Install Ground Staition Software <common-install-gcs>
     Autopilot System Assembly <autopilot-assembly-instructions>
-    Loading Firmware to boards with existing ArduPilot firmware <common-loading-firmware-onto-pixhawk>
+    Loading Firmware to bords with existing ArduPilot firmware <common-loading-firmware-onto-pixhawk>
     Loading Firmware to boards without existing ArduPilot firmware <common-loading-firmware-onto-chibios-only-boards>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuration <sub-configuration-landing-page>
