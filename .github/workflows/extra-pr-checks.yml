@@ -1,0 +1,20 @@
+name: Test Pull Request
+
+on: 
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  check-spelling:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install dependencies
+        run: python -m pip install codespell
+      - name: Checkout source
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 2  # Fetch the latest state + the PR changes
+      - name: Check spelling of added content
+        run: |
+          git diff HEAD^1 HEAD | sed -n 's/^\+//p' > added_content.txt
+          codespell added_content.txt
