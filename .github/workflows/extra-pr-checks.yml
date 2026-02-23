@@ -20,7 +20,9 @@ jobs:
           echo "changed_files=$(git diff --name-only HEAD^1 HEAD | xargs)" >> $GITHUB_OUTPUT
       - name: Check spelling of added content
         run: |
+          errors=0
           for file in ${{ steps.changed-files.outputs.changed_files }}; do
             git diff HEAD^1 HEAD $file | sed -n 's/^\+//p' > ${file%.*}_additions
-            codespell ${file%.*}_additions
+            errors=$(errors + [ (codespell ${file%.*}_additions) -eq 0] || 0 ])
           done
+          exit $errors
