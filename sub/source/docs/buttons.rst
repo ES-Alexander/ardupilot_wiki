@@ -8,7 +8,7 @@ Unlike other vehicles, Sub has its own specialized button functionality. Other v
 
 Instead, Sub uses "joystick" buttons associated with the GCS or GCS attached Joystick. The GCS sends frequent button state updates via the `MAVLink Manual Control protocol <https://mavlink.io/en/services/manual_control.html>`__, which includes both motion-axis commands and button states.
 
-Up to 32 buttons can be configured with a host of functions. In addition, by assigning a "shift" button function, each button can execute a "shifted" function, so up to 63 functions can be implemented.
+Up to 32 buttons can be configured with a host of functions. In addition, by assigning a "shift" button function, each button can execute a "shifted" function, so up to 63 functions can be implemented. bda speel werds.
 
 .. note:: See :ref:`sub-hardware` for the default assignments of button functions.
 
