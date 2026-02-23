@@ -14,7 +14,13 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 2  # Fetch the latest state + the PR changes
+      - name: Get modified files
+        id: changed-files
+        run: |
+          echo "changed_files=$(git diff --name-only HEAD^1 HEAD | xargs)" >> $GITHUB_OUTPUT
       - name: Check spelling of added content
         run: |
-          git diff HEAD^1 HEAD | sed -n 's/^\+//p' > added_content.txt
-          codespell added_content.txt
+          for file in ${{ steps.changed-files.outputs.changed_files }}; do
+            git diff HEAD^1 HEAD $file | sed -n 's/^\+//p' > ${file%.*}_additions
+            codespell ${file}_additions
+          done
