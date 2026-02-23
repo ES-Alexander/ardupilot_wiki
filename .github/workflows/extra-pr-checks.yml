@@ -24,6 +24,6 @@ jobs:
           # Process additions to each file, and count files that have new lines with errors
           for file in ${{ steps.changed-files.outputs.changed_files }}; do
             git diff HEAD^1 HEAD $file | sed -n 's/^\+//p' > ${file%.*}_additions
-            errors=$((errors + ($(codespell ${file%.*}_additions) && 1)))
+            codespell ${file%.*}_additions || ((errors++))
           done
           exit $errors
