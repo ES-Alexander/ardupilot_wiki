@@ -41,6 +41,7 @@ Stabilization Related
 ---------------------
 * :ref:`ATC_ANGLE_MAX<ATC_ANGLE_MAX>`
 * :ref:`JS_GAIN_DEFAULT<JS_GAIN_DEFAULT>`
+* :ref:`MOT_FV_CPLNG_K<MOT_FV_CPLNG_K>` (Vectored frame only)
 
 ALT_HOLD Mode
 -------------
